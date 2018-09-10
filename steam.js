@@ -9,9 +9,45 @@
 // ==/UserScript==
 
 (function() {
-    var a = document.querySelectorAll("div#searchResultsRows");
-    var b = document.querySelectorAll("div#BG_top");
+    function haha() {
+        console.log('haha');
+    }
 
-    console.log(a[0]);
-    console.log(b[0]);
+
+    function func1(n){
+        var rows = document.getElementById("searchResultsRows")
+        var lists = rows.querySelectorAll('#searchResultsRows>div');
+
+        var funcBtn = document.createElement('a');
+        funcBtn.setAttribute('class','btn_green_white_innerfade btn_medium market_noncommodity_buyorder_button');
+
+        function haha() {
+        console.log('haha');
+    }
+        funcBtn.setAttribute('onclick',(function () {
+        console.log('haha');
+    })());
+
+
+        funcBtn.innerHTML = 'AAA';
+
+        var myList = document.createElement('div');
+        myList.setAttribute('class','market_listing_row');
+        myList.innerHTML = 'AAA';
+
+
+        var resultsTable = document.getElementById('searchResultsTable');
+
+        myList.append(funcBtn);
+        resultsTable.prepend(myList);
+
+        console.log(resultsTable);
+
+        for (var i=0;i<10;i++){
+            console.log(lists[i]);
+        }
+    }
+
+    setTimeout(func1,3000)
+
 })();
